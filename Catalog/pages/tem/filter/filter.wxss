@@ -1,0 +1,59 @@
+
+.filter-section{
+    width: 610rpx;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    right:0;
+    top: 0;
+    z-index: 9999; 
+    padding: 0 20rpx;
+}
+.filter-item{
+    width: 100%;
+    min-height: 95rpx;
+    border-bottom: 1rpx solid #ededed;
+}
+.tab-header{
+    width: 100%;
+    height: 95rpx;
+    line-height: 95rpx;
+   display: flex;
+   justify-content: space-between;
+}
+.tab-title{position: relative; z-index: -1; font-size: 26rpx;}
+.arrow{position: relative; z-index: -1}
+.arrow-img{
+    width: 26rpx;
+    height: 16rpx;
+}
+.tab-content{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 48rpx;
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+
+.tab-name{
+    height: 48rpx;
+    line-height: 48rpx;
+    margin-right:16rpx;
+    margin-bottom:16rpx;
+    border-radius: 6rpx;
+    padding: 0 20rpx;
+    border:1rpx solid #ededed;
+    font-size: 24rpx;
+}
+.tab-line{
+    width: 100%;
+    height: 1rpx;
+     border-bottom: 1rpx solid #ededed;
+}
+.tab-name-c{background: #fff; color: #323131;}
+.tab-name-h{background: #e11e45; color: #fff;}
+.reset{width: 157rpx;height: 46rpx;font-size: 30rpx;line-height: 46rpx; border-radius: 4rpx; border: 1rpx solid #ededed; color: #323131; margin: 60rpx auto 0 auto;text-align: center;}
+.filter-bottom{height: 88rpx; width: 648rpx; display: flex;border-top: 1rpx #ededed solid; position: fixed;bottom: 0; right: 0;}
+.button-item{width: 50%;line-height: 88rpx; text-align: center;font-size: 30rpx;background:#fff;color: #323131; }
+.button-r{background:#e11e45;color: #fff;}
+.tab-selet-c{color: #e11e45;}

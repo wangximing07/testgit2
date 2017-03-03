@@ -1,0 +1,82 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="logo" style="height:{{354*wHeight/1205}}px">
+    <image class="logo-img" src="/img/logo.jpg" style="margin-top:{{88*wHeight/1205}}px"></image>
+  </view>
+  <view class="search" bindtap="onSearch" data-searchname="搜索" data-classitem="">
+    <view class="search-icon">
+      <image class="search-icon-i" src="/img/search.png"></image>
+    </view>
+    <text class="search-input">搜索安利产品</text>
+  </view>
+  <view class="list">
+  <navigator url="../list/list?itemclass=纽崔莱®营养保健食品" data-searchname="纽崔莱®营养保健食品" data-classitem="纽崔莱" bindtap='gotolist' class="list-nav">
+    <view class="list-item" style="height:{{108*wHeight/1205}}px">
+      <view class="list-item-i">
+        <image src="/img/icon01.png" class="list-item-m"></image>
+      </view>
+      <view class="list-item-t" style="height:{{108*wHeight/1205}}px;line-height:{{108*wHeight/1205}}px">
+          <view class="list-txt" >纽崔莱</view>
+          <view class="list-icon"></view>   
+      </view>
+    </view>
+     </navigator>
+     <navigator url="../list/list?itemclass=雅姿®美容化妆品" data-searchname="雅姿®美容化妆品" data-classitem="雅姿" bindtap='gotolist'  class="list-nav">
+    <view class="list-item" style="height:{{108*wHeight/1205}}px">
+      <view class="list-item-i">
+        <image src="/img/icon02.png" class="list-item-m"></image>
+      </view>
+      <view class="list-item-t" style="height:{{108*wHeight/1205}}px;line-height:{{108*wHeight/1205}}px">
+          <view class="list-txt">雅姿</view>
+          <view class="list-icon"></view>
+      </view>
+    </view>
+    </navigator>
+    <navigator url="../list/list" data-searchname="搜索" data-classitem="" bindtap='gotolist'  class="list-nav">
+    <view class="list-item" style="height:{{108*wHeight/1205}}px">
+      <view class="list-item-i">
+        <image src="/img/icon03.png" class="list-item-m"></image>
+      </view>
+      <view class="list-item-t" style="height:{{108*wHeight/1205}}px;line-height:{{108*wHeight/1205}}px">
+          <view class="list-txt">家居护理</view>
+          <view class="list-icon"></view>
+      </view>
+    </view>
+    </navigator>
+    <navigator url="../list/list?itemclass=家居科技系列" data-searchname="家居科技系列" data-classitem="家居科技" bindtap='gotolist'  class="list-nav">
+    <view class="list-item" style="height:{{108*wHeight/1205}}px">
+      <view class="list-item-i">
+        <image src="/img/icon04.png" class="list-item-m"></image>
+      </view>
+      <view class="list-item-t" style="height:{{108*wHeight/1205}}px;line-height:{{108*wHeight/1205}}px">
+          <view class="list-txt">家居科技</view>
+          <view class="list-icon"></view>
+      </view>
+    </view>
+    </navigator>
+        <navigator url="../list/list?itemclass=个护系列"  data-searchname="个护系列" data-classitem="个人护理" bindtap='gotolist'  class="list-nav">
+    
+    <view class="list-item" style="height:{{108*wHeight/1205}}px">
+      <view class="list-item-i">
+        <image src="/img/icon05.png" class="list-item-m"></image>
+      </view>
+      <view class="list-item-t" style="height:{{108*wHeight/1205}}px;line-height:{{108*wHeight/1205}}px">
+          <view class="list-txt">个人护理</view>
+          <view class="list-icon"></view>
+      </view>
+    </view>
+    </navigator>
+    <navigator url="../list/list" data-searchname="全部产品" data-classitem="全部产品" bindtap='gotolist' class="list-nav">
+    <view class="list-item" style="height:{{108*wHeight/1205}}px">
+      <view class="list-item-i">
+        <image src="/img/icon06.png" class="list-item-m"></image>
+      </view>
+      <view class="list-item-t" style="height:{{108*wHeight/1205}}px;line-height:{{108*wHeight/1205}}px">
+          <view class="list-txt">全部产品</view>
+          <view class="list-icon"></view>
+      </view>
+    </view>
+    </navigator>
+  </view>
+</view>

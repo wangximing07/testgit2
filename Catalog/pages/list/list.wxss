@@ -1,0 +1,392 @@
+/* pages/list/list.wxss */
+@import "/pages/tem/filter/filter.wxss";
+@import "/common/style/history.wxss";
+.container {
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.list-banner {
+  height: 280rpx;
+  width: 100%;
+  position: relative;
+}
+
+.list-banner-bg {
+  height: 280rpx;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.list-banner-bg-i {
+  height: 280rpx;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.list-banner-title {
+  color: #fff;
+  font-size: 60rpx;
+  letter-spacing: 6rpx;
+  height: 280rpx;
+  line-height: 280rpx;
+  text-align: center;
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  font-weight: normal;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  border-left: 14rpx solid #f8f8f8;
+  border-top: 14rpx solid #f8f8f8;
+}
+
+.list-item {
+  width: 50%;
+  height: 440rpx;
+}
+
+.list-item-c {
+  height: 386rpx;
+  border-right: 14rpx solid #f8f8f8;
+  border-bottom: 14rpx solid #f8f8f8;
+  padding: 20rpx 16rpx;
+  background: #fff;
+}
+
+.list2 {
+  background: #fff;
+}
+
+.list2-item {
+  width: 100%;
+  height: 200rpx;
+  padding: 10rpx 0 8rpx 0;
+  display: flex;
+  border-bottom:2rpx solid #ededed;
+}
+
+.list2-i-b {
+  width: 200rpx;
+}
+
+.list2-img {
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  
+}
+
+.list2-txt-b {
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.list2-title {
+  font-size: 26rpx;
+  color: #323131;
+  margin-top: 40rpx;
+  display: flex;
+}
+
+.list2-txt {
+  font-size: 22rpx;
+  color: #818181;
+  line-height: 36rpx;
+  max-height: 72rpx;
+  overflow: hidden;
+  margin: 10rpx 0;
+}
+.pro-tag{
+margin-left: 20rpx;
+color: #e11e45;
+font-size: 14rpx;
+display: inline-block;
+line-height: 26rpx;
+margin-top: 4rpx;
+}
+.pro-tag-i{width: 16rpx; height: 16rpx; margin-top: 5rpx;}
+.list2-para {
+  width: 370rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.list2-price{
+  font-size: 22rpx;
+  color: #eb355e;
+  font-weight: bold;
+}
+.list2-arg{
+  font-size: 22rpx;
+  color: #818181;
+}
+.color-org{
+  color: #e99619;
+}
+
+.list-loadding {
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.pro-img {
+  width: 240rpx;
+  height: 240rpx;
+  margin: 0 auto;
+}
+
+.pro-img-w {
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.pro-title, .pro-number {
+  width: 100%;
+}
+
+.pro-title {
+  font-size: 26rpx;
+  color: #323131;
+  line-height: 20px;
+  margin-top: 20rpx;
+  display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+.pro-number {
+  font-size: 22rpx;
+  color: #818181;
+  line-height: 18px;
+}
+
+.pro-arg {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.pro-arg:after {
+  clear: both;
+}
+
+.pro-price {
+  font-size: 22rpx;
+  line-height: 40rpx;
+  color: #eb174b;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  float: left;
+}
+
+.pro-tab {
+  float: right;
+  height: 16rpx;
+  line-height: 16rpx;
+  width: 86rpx;
+  text-align: center;
+  font-size: 14rpx;
+  color: #e11e45;
+  margin-top: 4rpx;
+}
+
+.pro-weight {
+  color: #e99619;
+  font-size: 22rpx;
+}
+
+.tab-icon {
+  width: 16rpx;
+  height: 16rpx;
+  display: inline-block;
+  margin-right: 4rpx;
+}
+.tab-icon-i{
+  width: 16rpx;
+  height: 16rpx;
+  margin-top: 12rpx;
+}
+.head-section {
+  height: 90rpx;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+}
+.head-line{border-bottom: 2rpx solid #ededed;}
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 186rpx;
+  left: 0;
+  background: #f8f8f8;
+}
+
+.search-input-box {
+  flex: 1;
+  height: 60rpx;
+  background: #ededed;
+  border-radius: 4rpx;
+  margin: 16rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-section {
+  width: 100%;
+  height: 92rpx;
+  background: #fff;
+  border-top: 1rpx solid #ededed;
+  padding: 0;
+  display: flex;
+}
+button.search-esc{
+    width: 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+     margin: 0;
+    padding: 0;
+    border:none;
+    margin-top: 16rpx;
+    margin-right: 20rpx
+}
+button.search-button{
+    width: 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    border:none;
+    margin: 0;
+    padding: 0;
+    margin-top: 16rpx;
+    background: #e11e45;
+    color: #fff;
+    margin-right: 20rpx;
+}
+.search-input {
+  width: 90%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  padding: 0;
+  margin: 0;
+}
+
+.search-icon {
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+  margin-right: 14rpx;
+}
+
+.search-close-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.search-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.search-close {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+}
+
+.tab {
+  width: 100%;
+  height: 90rpx;
+  border-top: 1rpx solid #ededed;
+  display: flex;
+  border-bottom: 1rpx solid #ededed;
+  font-size: 32rpx;
+  position: fixed;
+  top: 92rpx;
+  z-index: 99;
+  background: #fff;
+}
+
+.tab-img-w {
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 32rpx;
+}
+
+.tab-img-f {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+  margin-top: 31rpx;
+}
+
+.tab-img-p {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+
+.tab-item {
+  width: 24.9%;
+  text-align: center;
+  line-height: 92rpx;
+}
+
+.tab-item:nth-last-child(1) {
+  border-left: 1rpx solid #ededed;
+}
+
+.sort-section {
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  top: 186rpx;
+  left: 0;
+  z-index: 99;
+  background: #f1f1f1;
+}
+
+.sort-item {
+  width: 90%;
+  margin: 0 auto;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.content-bg {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: 0.3;
+  top: 0;
+  position: fixed;
+  z-index: 9990;
+  overflow: hidden;
+}
+.loadding-img{
+  width: 24rpx;
+  height: 24rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.no-pro{
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}

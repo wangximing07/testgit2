@@ -1,0 +1,17 @@
+<template name="filter">
+  <view class="filter-section">
+    <view class="filter-item">
+      <view class="tab-header" bindtap="arrowFun">
+        <view class="tab-title">纽崔莱</view>
+        <view class="arrow" style="display:{{arrowShow ? 'block':'none'}}">
+          <image src="/img/arrow-up.jpg" class="arrow-img"></image>
+        </view>
+        <view class="arrow" style="display:{{arrowShow ? 'none':'block'}}">
+          <image src="/img/arrow-down.jpg" class="arrow-img"></image>
+        </view>
+      </view>
+      <view calss="tab-content"></view>
+    </view>
+  </view>
+  <view class="content-bg" bindtap="bgFun">12131231</view>
+</template>

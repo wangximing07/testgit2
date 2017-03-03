@@ -1,0 +1,72 @@
+
+<!--pages/details/details.wxml-->
+<view class="container">
+
+  <!--幻灯图-->
+  <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block>
+      <view wx:for="{{product.images}}" wx:for-item="item" wx:for-index="idx">
+        <swiper-item bindtap="onItemClick" data-current="{{item.src}}" data-hdurl="{{item.hdurl}}">
+          <image src="{{item.src}}" class="banner-img" mode="aspectFit"/>
+        </swiper-item>
+      </view> 
+    </block>
+  </swiper>
+
+  <!--幻灯图 END-->
+  <view class="arg">
+    <view class="pro-title">
+      <text>{{product.itemName}}</text>
+      <view class="pro-tag" wx:if="{{product.oversea=='1'}}">
+        <image src="/img/global.png" class="pro-tag-i"></image>
+        海外购
+      </view>
+    </view>
+    <view class="pro-cs">
+      <view class="pro-number">
+        产品编号：
+        <text style="color：#323131">{{product.itemNumber}}</text>
+      </view>
+      <view class="pro-price">
+        <text wx:if="{{product.price}}">¥{{product.price}}</text>
+        <text wx:else>¥0</text>
+      </view>
+    </view>
+  </view>
+  <view class="content" wx:for="{{product.details}}" wx:for-item="item" wx:for-index="idx">
+    <view class="p-title">
+      <view class="p-title-b">{{item.title}}</view>
+    </view>
+    <view class="p-content" wx:for="{{item.details}}" wx:for-item="item" wx:for-index="idx">
+      <view class="paragraph" wx:if="{{item.type=='text'}}">
+        <text>{{item.value}}</text>
+      </view>
+      <view class="paragraph" wx:if="{{item.type=='image'}}">
+        <image src="{{item.value}}" class="paragraph-img"  mode="widthFix"></image>
+      </view>
+      <view class="paragraph" wx:if="{{item.type=='table'}}">
+
+          <view class="table">
+            <view class="tr" wx:for="{{item.value}}" wx:for-item="item" wx:for-index="idx">
+                <view class="td" wx:for="{{item}}" wx:for-item="item" wx:for-index="idx">{{item}}</view>
+            </view>
+            
+        </view>
+         
+      </view>
+    </view>
+  </view>
+  <view class="content" wx:if="{{product.hasBrand}}">
+    <view class="p-title">
+      <view class="p-title-b">品牌介绍</view>
+    </view>
+    <view class="p-content" wx:for="{{product.brand}}" wx:for-item="item" wx:for-index="idx">
+      <view class="paragraph" wx:if="{{item.type=='text'}}">
+        <text>{{item.value}}</text>
+      </view>
+      <view class="paragraph" wx:if="{{item.type=='image'}}">
+        <image src="{{item.value}}" mode="widthFix" class="paragraph-img"></image>
+      </view>
+    </view>
+  </view>
+</view>

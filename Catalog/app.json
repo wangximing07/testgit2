@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/details/details",
+    "pages/list/list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e11e46",
+    "navigationBarTitleText": "安利产品大全",
+    "navigationBarTextStyle":"#fff"
+  }
+}

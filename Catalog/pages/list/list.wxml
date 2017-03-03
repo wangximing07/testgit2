@@ -1,0 +1,171 @@
+<view class="container" style="overflow:{{view.bgshow==1?'hidden':'visible'}}">
+
+  <!--header start-->
+  <view class="head-section">
+    <view class="search-section">
+
+      <!--搜索框 S-->
+      <view class="search-input-box">
+        <view class="search-icon">
+          <image src="/img/search.png" class="search-close-img"></image>
+        </view>
+        <input type="text" placeholder="搜索安利产品" class="search-input" bindinput="SearchInput" bindfocus="SerchFocus" value="{{inputValue}}" bindblur="SearchBlur" />
+        <view class="search-close" bindtap="clearInput" style="display:{{clearButton || inputValue!='' ? 'block':'none'}}">
+          <image src="/img/search_close.png" class="search-img"></image>
+        </view>
+      </view>
+
+      <!--搜索框 E-->
+      <button class="search-esc" size="mini" bindtap="EscSearchFun" plain="true" style="display:{{inputValue==''?'block':'none'}};">取消</button>
+      <button class="search-button" bindtap="SearchFun" size="mini" plain="true" style="display:{{(inputValue=='') || isSearchHidden ?'none':'block'}};">搜索</button>
+    </view>
+    <view class="head-line"></view>
+  </view>
+
+  <!--header end-->
+
+  <!--搜索历史 S-->
+  <view class="search-history" style="display:{{(searchEvent.isSearchBlur && inputValue=='')  || (searchEvent.isSerchFocus && inputValue=='' ) || (searchEvent.isSearchInput && inputValue =='')?'block':'none'}}">
+    <view class="search-his-t">
+      <text>历史搜索</text>
+    </view>
+    <view class="history-key">
+      <block wx:for="{{hiskey}}" wx:for-item="item">
+        <view class="history-key-item" bindtap="selectKeyFun" data-keyword="{{item}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+
+  <!--搜索历史 E-->
+
+  <!--关键词列表 S-->
+  <view class="key-list" style="display:{{(searchEvent.isSearchBlur && inputValue!='') ||(searchEvent.isSearchInput && inputValue!='') || (searchEvent.isSerchFocus && inputValue!='' )?'block':'none'}}">
+    <block wx:for="{{keywordlist}}" wx:for-item="item">
+      <view class="key-item" bindtap="selectKeyFun" data-keyword="{{item.keyword}}">
+        <text class="key-blod">{{item.keyword}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!--关键词列表 E-->
+
+  <!--列表 S-->
+  <view class="content" style="display:{{ listboxIsshow ? 'block':'none'}};height:{{contentHeight}}px">
+    <view class="tab">
+      <view class="tab-item tab-selet-c" bindtap="sortFun" style="color:{{tabclick.A_def==1?'#e11e45':'#818181'}}">默认</view>
+      <view class="tab-item" bindtap="priceFun" style="color:{{tabclick.B_price==0?'#818181':'#e11e45'}}">价格
+        <image src="/img/default.png" class="tab-img-p" wx:if="{{tabclick.B_pricesort==2}}"></image>
+        <image src="/img/up.png" class="tab-img-p" wx:if="{{tabclick.B_pricesort==1}}"></image>
+        <image src="/img/down.png" class="tab-img-p" wx:if="{{tabclick.B_pricesort==0}}"></image>
+      </view>
+      <view class="tab-item" bindtap="viewFun">
+        <image src="/img/change01.png" class="tab-img-w" wx:if="{{C_view==0}}"></image>
+        <image src="/img/change02.png" class="tab-img-w" wx:if="{{C_view==1}}"></image>
+      </view>
+      <view class="tab-item" bindtap="filterFun">筛选
+        <image src="/img/filter.png" class="tab-img-f"></image>
+      </view>
+    </view>
+    <!--<scroll-view scroll-y="true"  style="height:{{contentHeight}}px" >-->
+<scroll-view scroll-y="true"  style="height:{{contentHeight}}px" bindscrolltolower="bindDownLoad" >
+     <!--大图模式 start-->
+      <view class="list" style="display:{{C_view==0?'flex':'none'}}">
+        <block wx:for="{{listdata}}" wx:for-item="list">
+
+          <!--list-item start-->
+          <navigator url="../details/details?itemNumber={{list.itemNumber}}" class="list-item" >
+            <view class="list-item-c">
+              <view class="pro-img">
+                <image src="{{list.imageUrl}}" class="pro-img-w" mode="aspectFit"></image>
+              </view>
+              <view class="pro-title">
+                <text>{{list.itemName}}</text>
+              </view>
+              <view class="pro-arg">
+                <view class="pro-price">
+                  <text wx:if="{{list.price}}">¥{{list.price}}</text>
+                  <text wx:else>¥0</text>
+                </view>
+                <view class="pro-tab" wx:if="{{list.oversea==1}}">
+                  <view class="tab-icon">
+                    <image src="/img/global.png" class="tab-icon-i"></image>
+                  </view>海外购</view>
+              </view>
+              <view class="pro-number" wx:if="{{list.content}}">净含量：
+                <text class="pro-weight">{{list.content}}</text>
+              </view>
+            </view>
+          </navigator>
+
+          <!--list-item end-->
+        </block>
+      </view>
+
+      <!--大图模式 end-->
+
+      <!--列表模式 start-->
+      <view class="list2" style="display:{{C_view==1?'block':'none'}}">
+       <block wx:for="{{listdata}}" wx:for-item="list2">
+        <navigator url="../details/details?itemNumber={{list2.itemNumber}}" >
+        <view class="list2-item">
+          <view class="list2-img-b">
+            <image src="{{list2.imageUrl}}" class="list2-img"  mode="aspectFit"></image>
+          </view>
+          <view class="list2-txt-b">
+            <view class="list2-title">{{list2.itemName}}<view class="pro-tag" wx:if="{{list2.oversea==1}}">
+                <image src="/img/global.png" class="pro-tag-i"></image>
+                海外购
+              </view></view>
+            
+            <view class="list2-txt">{{list2.effect}}</view>
+            <view class="list2-para">
+              <view class="list2-price"> <text wx:if="{{list2.price}}">¥{{list2.price}}</text>
+                  <text wx:else>¥0</text></view>
+              <view class="list2-arg" wx:if="{{list2.content}}">净含量：
+                <text class="color-org">{{list2.content}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        </navigator>
+        </block>
+       
+      </view>
+
+      <!--列表模式 end-->
+      <view wx:if="{{listdata.length==0 && hidden}}" class="no-pro">没有找到该产品！</view>
+      <!--<loading hidden="{{hidden}}" bindchange="loadingChange">
+        加载中
+      </loading>-->
+      <view class="list-loadding" hidden="{{hidden}}" bindchange="loadingChange"><image src="/img/loading.gif" class="loadding-img"></image>加载中…</view>
+    </scroll-view>
+  </view>
+
+  <!--列表 E-->
+  <view class="content-bg" bindtap="bgFun" style="display:{{view.bgshow?'block':'none'}}"></view>
+
+ <!--筛选 S-->
+  <view class="filter-section" style="display:{{view.filtershow==1?'block':'none'}}">
+    <view class="filter-item" wx:for="{{itemClass}}" wx:key="{{item.id}}">
+      <view class="tab-header" catchtap="arrowFun" data-id="{{item.id}}">
+        <view class="tab-title">{{item.name}}</view>
+        <view class="arrow">
+          <image src="/img/arrow-down.png" class="arrow-img" wx:if="{{item.tabShow == 0}}"></image>
+          <image src="/img/arrow-up.png" class="arrow-img" wx:if="{{item.tabShow == 1}}"></image>
+        </view>
+      </view>
+      <view class="tab-content" style="display:{{item.tabShow == 1 ? 'flex':'none'}}">
+        <block wx:for="{{item.child}}" wx:key="" wx:for-item="childItem" wx:for-index="childIdx">
+          <view class="tab-name {{childItem.isselect==1 ? 'tab-name-h':'tab-name-c'}}" catchtap="selectClassFun" data-itemid="{{childItem.id}}" data-classid="{{item.id}}">{{childItem.name}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="reset" bindtap="resetselectFun">重置</view>
+    <view class="filter-bottom">
+      <view class="button-item" bindtap="escFun">取消</view>
+      <view class="button-item button-r" bindtap="submitFun">确定</view>
+    </view>
+  </view>
+
+  <!--筛选 E-->
+</view>
